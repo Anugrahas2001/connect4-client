@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 import Board from "./components/Board";
+import Confetti from "react-confetti";
 
 type cell = null | string;
 type Board = cell[][];
@@ -20,8 +21,14 @@ function App() {
   const [gameOver, setGameOver] = useState<boolean>(false);
   const [searchingForOpponent, setSearchingForOpponent] =
     useState<boolean>(false);
+  const [dimension, setDimension] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
+    setDimension({ width: window.innerWidth, height: window.innerHeight });
+
     const newSocket: Socket = io("http://localhost:3000", {
       transports: ["websocket"],
     });
@@ -69,6 +76,17 @@ function App() {
   const newGameHandler = () => {
     if (socket) {
       socket.emit("newGame");
+
+      setBoard(
+        Array(6)
+          .fill(null)
+          .map(() => Array(7).fill(null))
+      );
+      setCurrentPlayer("red");
+      setWinner(null);
+      setGameOver(false);
+      setOpponentFound(true);
+      setSearchingForOpponent(false);
     }
   };
 
@@ -134,6 +152,15 @@ function App() {
         >
           New Game
         </button>
+      )}
+      {winner && (
+        <Confetti
+          width={dimension.width}
+          height={dimension.height}
+          numberOfPieces={1000}
+          recycle={false}
+          gravity={0.1}
+        />
       )}
     </div>
   );
