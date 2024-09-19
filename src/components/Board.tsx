@@ -19,7 +19,7 @@ const Board = ({ board, makeMove }: BoardProps) => {
           {row.map((cell, cellIndex) => (
             <div
               key={cellIndex}
-              className={`w-16 h-16 rounded-full flex justify-center items-center cursor-pointer shadow-md shadow-blue-500 ${
+              className={`w-16 h-16 lg:w-16 lg:h-16 md:w-16 md:h-16 sm:w-10 sm:h-10 xs:w-8 xs:h-8 rounded-full flex justify-center items-center cursor-pointer shadow-md shadow-blue-500 ${
                 cell === "red"
                   ? "bg-red-500"
                   : cell === "yellow"
@@ -30,7 +30,7 @@ const Board = ({ board, makeMove }: BoardProps) => {
             >
               {cell ? (
                 <div
-                  className={`w-14 h-14 rounded-full ${
+                  className={`w-14 h-14 lg:w-14 lg:h-14 md:w-14 md:h-14 sm:w-8 sm:h-8 xs:w-6 xs:h-6 rounded-full ${
                     cell === "red" ? "bg-red-500" : "bg-yellow-400"
                   }`}
                 />

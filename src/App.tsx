@@ -54,7 +54,7 @@ function App() {
   }, []);
 
   const makeMove = (column: number) => {
-    if (socket) {
+    if (socket && myColor === currentPlayer) {
       socket.emit("makeMove", { column });
     }
   };
@@ -88,13 +88,14 @@ function App() {
         </button>
       ) : null}
 
-{gameStarted && myColor && !winner && (
-  <div className="text-xl font-semibold mb-4">
-    You are playing as{" "}
-    <span className={`text-${myColor === "red" ? "red" : "yellow"}-500`}>{myColor}</span>
-  </div>
-)}
-
+      {gameStarted && myColor && !winner && (
+        <div className="text-xl font-semibold mb-4">
+          You are playing as{" "}
+          <span className={`text-${myColor === "red" ? "red" : "yellow"}-500`}>
+            {myColor}
+          </span>
+        </div>
+      )}
 
       {winner && (
         <div className="text-2xl font-semibold rounded mb-4 text-green-600">
