@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
 
-    const newSocket: Socket = io("http://localhost:3000", {
+    const newSocket: Socket = io("https://connect4-server.onrender.com", {
       transports: ["websocket"],
     });
     setSocket(newSocket);
