@@ -1,14 +1,11 @@
-import React from "react";
-
 type BoardProps = {
   board: (string | null)[][];
   makeMove: (columnIndex: number) => void;
 };
 
 const Board = ({ board, makeMove }: BoardProps) => {
-  
   const handleColumnIndex = (columnIndex: number) => {
-    console.log(columnIndex,"index");
+    console.log(columnIndex, "index");
     makeMove(columnIndex);
   };
 

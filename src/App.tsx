@@ -105,6 +105,17 @@ function App() {
             : "Join Game"}
         </button>
       ) : null}
+      {!gameStarted ? (
+        <div className="px-14 mt-7 lg:mt-7 lg:px-14 md:px-14 sm:px-8 xs:px-6">
+          <h1 className="text-xl font-semibold">Instruction:-</h1>
+          <p className="text-lg py-4 font-sans lg:text-lg md:text-lg sm:text-sm xs:text-sm lg:py-4 md:py-4 sm:py-2 xs:py-2">
+            Each turn, a player places a red or yellow disc into a column, and
+            it will fall to the lowest available spot. The first player to
+            connect 4 discs of the same color in a row horizontally, vertically,
+            or diagonally wins.
+          </p>
+        </div>
+      ) : null}
 
       {gameStarted && myColor && !winner && (
         <div className="text-xl font-semibold mb-4">
