@@ -149,7 +149,7 @@ function App() {
     const cols = board[0].length;
 
     const checkSequence = (sequence: (string | null)[]) => {
-      return sequence.every((cell) => cell != null && cell == sequence[0]);
+      return sequence.every((cell) => cell !== null && cell == sequence[0]);
     };
 
     for (let row = 0; row < rows; row++) {
@@ -208,8 +208,8 @@ function App() {
   };
 
   const newGameHandler = () => {
-    if (socket) {
-      socket.emit("newGame");
+    // if (socket) {
+      // socket.emit("newGame");
 
       resetBoard();
       setCurrentPlayer("red");
@@ -218,7 +218,7 @@ function App() {
       setGameOver(false);
       setOpponentFound(true);
       setSearchingForOpponent(false);
-    }
+    // }
   };
 
   return (
