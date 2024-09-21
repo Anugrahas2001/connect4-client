@@ -15,7 +15,6 @@ function App() {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [currentPlayer, setCurrentPlayer] = useState<string | null>("red");
   const [myColor, setMyColor] = useState<string | null>("red");
-  console.log(myColor, "my color");
   const [winner, setWinner] = useState<null | string>(null);
   console.log(winner, "winner after play");
   const [opponentFound, setOpponentFound] = useState<boolean>(false);
@@ -214,6 +213,7 @@ function App() {
 
       resetBoard();
       setCurrentPlayer("red");
+      setMyColor(currentPlayer === "red" ? "yellow" : "red");
       setWinner(null);
       setGameOver(false);
       setOpponentFound(true);
