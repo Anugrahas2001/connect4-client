@@ -1,50 +1,14 @@
-# React + TypeScript + Vite
+# Connect 4 Multiplayer
+## Demo:https://connect4-client-git-master-anugraha-ss-projects.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Summary
+Connect 4 is a dynamic multiplayer game built using React.js for the frontend, TypeScript for type safety, and WebSocket to enable real-time, bidirectional communication between players. The game features two modes: a single-player mode where users play against a computer opponent, and an online multiplayer mode. In the two-player online mode, gameplay commences only after both participants have joined the session. Each player is assigned a distinct color for their discs, and the objective is to strategically align four discs of the same color in a row—whether horizontally, vertically, or diagonally—to claim victory. Once a player wins, they can easily start a new match by selecting the "New Game" option, enabling smooth continuity of gameplay. Additionally, the game is fully responsive, offering an optimized and seamless experience on both mobile devices and laptops. The WebSocket integration ensures low-latency communication, delivering an interactive and real-time gaming experience across all platforms.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Laptop View
+![Screenshot (304)](https://github.com/user-attachments/assets/dd10d3d4-c63b-4947-ad4b-ea4539954694)
 
-## Expanding the ESLint configuration
+![Screenshot (293)](https://github.com/user-attachments/assets/a498b880-b71d-4a3b-bfdd-f3b69ed9ef51)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Mobile View
+![Screenshot (305)](https://github.com/user-attachments/assets/a25192a4-8e71-4790-83ee-b29b2c269113)
