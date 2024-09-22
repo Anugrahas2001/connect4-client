@@ -12,10 +12,8 @@ Connect 4 is a dynamic multiplayer game built using React.js for the frontend, T
 
 ## Mobile View
 ![Screenshot (305)](https://github.com/user-attachments/assets/a25192a4-8e71-4790-83ee-b29b2c269113)
-![WhatsApp Image 2024-09-22 at 10 16 12 PM](https://github.com/user-attachments/assets/bdff06da-a3f6-4057-a0fd-478160e1cece)
-
-## Technologies Used
-
+![Screenshot (317)](https://github.com/user-attachments/assets/916e7c3e-0fc1-4ce6-8f56-b794ec526fd8)
+![Screenshot (318)](https://github.com/user-attachments/assets/f35b05f1-c150-4619-bd92-2dbb37673669)
 
 
 ## Technologies
