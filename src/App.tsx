@@ -168,6 +168,21 @@ function App() {
     }
 
     for (let row = 0; row < rows - 3; row++) {
+      for (let col = 0; col < cols; col++) {
+        const sequence = [
+          board[row][col],
+          board[row + 1][col],
+          board[row + 2][col],
+          board[row + 3][col],
+        ];
+
+        if (checkSequence(sequence)) {
+          return true;
+        }
+      }
+    }
+
+    for (let row = 0; row < rows - 3; row++) {
       for (let col = 0; col < cols - 3; col++) {
         const sequence = [
           board[row][col],
@@ -209,15 +224,15 @@ function App() {
 
   const newGameHandler = () => {
     // if (socket) {
-      // socket.emit("newGame");
+    // socket.emit("newGame");
 
-      resetBoard();
-      setCurrentPlayer("red");
-      setMyColor(currentPlayer === "red" ? "yellow" : "red");
-      setWinner(null);
-      setGameOver(false);
-      setOpponentFound(true);
-      setSearchingForOpponent(false);
+    resetBoard();
+    setCurrentPlayer("red");
+    setMyColor(currentPlayer === "red" ? "yellow" : "red");
+    setWinner(null);
+    setGameOver(false);
+    setOpponentFound(true);
+    setSearchingForOpponent(false);
     // }
   };
 
